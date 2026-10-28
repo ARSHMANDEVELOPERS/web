@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover premium luxury fragrances at Maison Noir.">
+  <title>MAISON NOIR | Luxury Perfumes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <a href="#home" class="logo">MAISON <span>NOIR.</span></a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+  <nav id="nav">
+    <a href="#home">Home</a>
+    <a href="#collection">Collection</a>
+    <a href="#story">Our Story</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="cart-button" id="openCart">Bag <span id="cartCount">0</span></button>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <p class="eyebrow">THE ART OF FINE FRAGRANCE</p>
+    <h1>A scent that<br>defines <em>you.</em></h1>
+    <p class="hero-description">Discover extraordinary fragrances crafted for those who leave a lasting impression.</p>
+    <a class="btn btn-gold" href="#collection">EXPLORE COLLECTION <span>↗</span></a>
+    <div class="hero-note"><span>✦</span> ELEGANCE IN EVERY DROP</div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-orbit"></div>
+    <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1000&q=85" alt="Luxury perfume bottle">
+    <div class="hero-label"><span>EAU DE PARFUM</span><strong>NO. 01</strong></div>
+  </div>
+  <div class="hero-index">01 / 04</div>
+</section>
+
+<section class="benefits">
+  <div><span>✧</span> PREMIUM INGREDIENTS</div>
+  <div><span>✧</span> LONG-LASTING SCENTS</div>
+  <div><span>✧</span> ELEGANT PACKAGING</div>
+  <div><span>✧</span> WORLDWIDE DELIVERY*</div>
+</section>
+
+<section class="collection section" id="collection">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">THE SIGNATURE COLLECTION</p>
+      <h2>Find your <em>fragrance.</em></h2>
+    </div>
+    <p>Distinctive scents. Timeless character.<br>A fragrance for every side of you.</p>
+  </div>
+
+  <div class="shop-tools">
+    <div class="filters" id="filters">
+      <button class="filter active" data-filter="All">All Scents</button>
+      <button class="filter" data-filter="Men">For Him</button>
+      <button class="filter" data-filter="Women">For Her</button>
+      <button class="filter" data-filter="Unisex">Unisex</button>
+    </div>
+    <input type="search" id="search" placeholder="Search fragrances..." aria-label="Search fragrances">
+  </div>
+
+  <div class="product-grid" id="productGrid"></div>
+</section>
+
+<section class="story section" id="story">
+  <div class="story-image">
+    <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=1000&q=85" alt="Perfume craftsmanship">
+  </div>
+  <div class="story-content">
+    <p class="eyebrow">MORE THAN A FRAGRANCE</p>
+    <h2>Luxury is an<br><em>invisible signature.</em></h2>
+    <p>We believe a fragrance is more than a scent. It is a memory, a feeling, and a statement that stays with you long after you leave the room.</p>
+    <a href="#collection" class="text-link">DISCOVER OUR WORLD ↗</a>
+  </div>
+</section>
+
+<section class="newsletter">
+  <p class="eyebrow">A NOTE OF EXCLUSIVITY</p>
+  <h2>Enter the world of <em>Maison Noir.</em></h2>
+  <p>Get collection updates and exclusive offers delivered to your inbox.</p>
+  <form id="newsletterForm">
+    <input type="email" id="newsletterEmail" placeholder="Your email address" required>
+    <button class="btn btn-gold" type="submit">SUBSCRIBE ↗</button>
+  </form>
+  <p id="newsletterMessage" class="form-message" aria-live="polite"></p>
+</section>
+
+<section class="contact section" id="contact">
+  <div>
+    <p class="eyebrow">WE'RE HERE FOR YOU</p>
+    <h2>Let's talk <em>fragrance.</em></h2>
+    <p>Questions about our collection or your order? Send us a message.</p>
+  </div>
+  <form id="contactForm" class="contact-form">
+    <input type="text" id="contactName" placeholder="Your name" required>
+    <input type="email" id="contactEmail" placeholder="Your email" required>
+    <textarea id="contactMessage" placeholder="How can we help?" rows="4" required></textarea>
+    <button type="submit" class="btn btn-gold">SEND MESSAGE ↗</button>
+    <p id="contactStatus" class="form-message" aria-live="polite"></p>
+  </form>
+</section>
+</main>
+
+<footer>
+  <a href="#home" class="logo">MAISON <span>NOIR.</span></a>
+  <p>THE ART OF LEAVING AN IMPRESSION.</p>
+  <p>© <span id="year"></span> MAISON NOIR. All rights reserved.</p>
+  <small>*Delivery availability and charges depend on your store's actual shipping policy.</small>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+  <div class="cart-header">
+    <h2>Your Bag <span id="drawerCount">(0)</span></h2>
+    <button id="closeCart" class="close-btn" aria-label="Close cart">✕</button>
+  </div>
+  <div id="cartItems" class="cart-items"></div>
+  <div class="cart-footer">
+    <div class="cart-total"><span>Subtotal</span><strong id="cartTotal">$0.00</strong></div>
+    <p>Shipping and taxes calculated at checkout.</p>
+    <button id="checkout" class="btn btn-gold checkout-btn">PROCEED TO CHECKOUT ↗</button>
+    <small>Demo store: no payment is collected.</small>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
